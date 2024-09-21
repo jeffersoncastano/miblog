@@ -1,0 +1,3 @@
+[submodule "miblog/MI-BLOG"]
+    path = miblog/MI-BLOG
+    url = https://github.com/jeffersoncastano/miblog.git
