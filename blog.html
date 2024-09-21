@@ -41,7 +41,7 @@
 
       <article>
         <h3>Cómo utilizar Git</h3>
-        <p>Publicado el 19 de septiembre de 2024</p>
+        <p>Publicado el 21 de septiembre de 2024</p>
 
         <h6>Creación de un repositorio local</h6>
         <p>Un repositorio de Git es un almacenamiento virtual de tu proyecto. Permite guardar versiones del código a las que puedes acceder cuando sea necesario.</p>
@@ -49,8 +49,44 @@
         <p>Para crear un nuevo repositorio, primero debemos tener instalado Git en nuestro equipo. Se puede descargar fácilmente haciendo clic <a href="https://git-scm.com/downloads" target="_blank">aquí.</a> </p>
         <p>Teniendo Git instalado, creamos una carpeta con el nombre que identifique a nuestro repositorio. Abrimos la carpeta, creamos un archivo con un nombre cualquiera y en la ruta, escribimos "cmd" y pulsamos enter, con lo que se abrirá la ventana del símbolo del sistema:, así: </p>
         
+        <img src="assets/imgs/cmdRuta.png" width="700px"> <img src="assets/imgs/cmd.png" width="700px">
 
         <p>Luego, escribimos el comando "git init" y pulsamos enter. El comando git init crea un nuevo repositorio de Git. Puede utilizarse para convertir un proyecto existente y sin versión en un repositorio de Git, o para inicializar un nuevo repositorio vacío.</p>
+        <img src="assets/imgs/gitInit.png" width="700px">
+
+        <p>Cuando trabajamos en equipo utilizando Git, es importante tener nuestro trabajo "aparte" o "aislado" de la rama principal, que comunmente es nombrada "master", mientras que realizamos los cambios al código, para así no afectar la rama principal hasta tener nuestro código funcional.</p>
+        
+        <p>Las ramas en Git se utilizan para desarrollar nuevas características o para la corrección de errores.</p>
+
+        <p>Una forma más practica para ejecutar los comandos de Git, es utilizar la función "Open Git Bash Here".
+            Para esto, vamos a la carpeta que creamos para nuestro proyecto, damos clic derecho y seleccionamos la opción mencionada. Lo que nos abrirá esta terminal: </p>
+            
+        <img src="assets/imgs/bashhere.png" width="700px">
+        <p>En esta terminal, vamos a crear una nueva rama llamada "modificacion-index", donde trabajaremos en el archivo index.html. Lo haremos ejecutando el comando 
+            "git checkout -b modificacion-index"</p>
+        <img src="assets/imgs/ramaNueva.png" width="700px">
+        <p>Luego de realizar los cambios que necesitemos, ejecutamos el comando "git status", con el cual veremos los archivos que tienen modificaciones.
+            En este caso, se modificó el archivo llamado "index.html", para seleccionar este archivo e incluirlo en el próximo commit a realizar, ejecutamos el comando "git add index.html".
+            En el caso de que tengamos varios archivos con modificaciones y necesitemos agregarlos todos de una sola vez, podemos ejecutar el comando "git add ."
+            Posteriormente, para confirmar los cambios, ejecutamos el siguiente comando: git commit -m "Aquí escribimos un mensaje que describa los cambios realizados".
+        </p>
+        <img src="assets/imgs/commit.png" width="700px">
+        <p>Para que nuestra rama principal "master" tenga los cambios que realizamos en esta rama, ejecutamos el comando "git checkout master" para pasarnos a la rama master.
+            Luego, ejecutamos el comando "git merge modificacion-index" para que los cambios almacenados en esa rama se fusionen con "master".
+        </p>
+        <img src="assets/imgs/merge.png" width="700px">
+        <p>Para conectar nuestro repositorio local con uno remoto de Github, ingresamos a Github y en la esquina superior izquiera pulsamos "New".
+            Elegimos el nombre para el repositorio y damos clic en "Create repository".
+        </p>
+        <img src="assets/imgs/repo1.png" width="500px"> <img src="assets/imgs/repo2.png" width="500px"> <img src="assets/imgs/repo3.png" width="500px">
+        <p>Luego de esto, en la consola de Git, ejecutamos el comando "git remote add origin 'URL' " reeemplazando 'URL' por la que corresponde a nuestro repositorio (esta URL la obtenemos al crear el repositorio).
+            Este comando se utiliza para conectar nuestro repositorio local al repositorio remoto en Github.
+            Por último, para subir los cambios del repositorio local al remoto, debemos ejecutar el comando "git push -u origin master", teniendo en cuenta que "master" 
+            debe ser reemplazado por el nombre de tu rama principal, en caso de que tenga otro nombre.
+        </p>
+        <img src="assets/imgs/push.png" width="700px">
+        <p>Si ingresamos al repositorio, podemos verificar que efectivamente el archivo o archivos que teníamos locales, están almacenados ahora en nuestro repositorio de GitHub</p>
+        <img src="assets/imgs/archivosRepo.png" width="700px">
     </article>
 
       <!-- Puedes agregar más entradas de blog aquí -->
